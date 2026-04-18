@@ -1,0 +1,134 @@
+.gallery-page {
+  font-family: "Poppins", sans-serif;
+  background: #0f172a;
+  color: #fff;
+}
+
+/* ===== Hero ===== */
+.gallery-hero {
+  height: 60vh;
+  background: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c")
+    center/cover no-repeat;
+  position: relative;
+}
+
+.gallery-overlay {
+  background: rgba(0,0,0,0.7);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.gallery-overlay h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 20px #00f0ff;
+}
+
+/* ===== Section ===== */
+.gallery-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  margin-bottom: 40px;
+  color: #00f0ff;
+}
+
+/* ===== Grid ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* ===== Card ===== */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  transform: perspective(1000px);
+}
+
+/* Glow Border */
+.gallery-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(120deg, #00f0ff, #0077ff, #00f0ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  animation: borderGlow 4s linear infinite;
+  z-index: 2;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+/* Hover Effects */
+.gallery-card:hover img {
+  transform: scale(1.15) rotate(1deg);
+  filter: brightness(0.6);
+}
+
+/* Overlay */
+.hover-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.gallery-card:hover .hover-overlay {
+  opacity: 1;
+}
+
+.hover-overlay h3 {
+  color: #00f0ff;
+  margin-bottom: 5px;
+}
+
+/* ===== Animations ===== */
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .gallery-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .gallery-card img {
+    height: 200px;
+  }
+}

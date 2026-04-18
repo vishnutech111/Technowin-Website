@@ -1,0 +1,120 @@
+.blog-page {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Vertical Carousel ===== */
+.vertical-carousel {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.v-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.v-slide.active {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* Overlay */
+.v-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  text-align: center;
+}
+
+.v-overlay h1 {
+  font-size: 3rem;
+}
+
+.v-overlay p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* ===== Blog Section ===== */
+.blog-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.blog-section h2 {
+  margin-bottom: 30px;
+}
+
+/* Grid */
+.blog-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.blog-card {
+  background: white;
+  padding: 20px;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+}
+
+.blog-card h3 {
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.blog-card button {
+  padding: 8px 15px;
+  border: none;
+  background: #00bcd4;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.blog-card button:hover {
+  background: #0097a7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .v-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .vertical-carousel {
+    height: 60vh;
+  }
+}
