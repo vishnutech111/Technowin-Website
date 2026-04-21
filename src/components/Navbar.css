@@ -81,55 +81,119 @@
 }
 
 
-/* Menu Button */
+/* ===== MENU BUTTON ===== */
 .menu-btn {
   display: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: white;
   cursor: pointer;
-  z-index: 1100;
+  z-index: 1200;
+  transition: 0.3s;
 }
 
-/* Mobile Menu */
+.menu-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ===== MOBILE MENU ===== */
 .mobile-menu {
   position: fixed;
   top: 70px;
   right: -100%;
-  width: 50%;
-  height: 100vh;
-  background-color: black;
-  border-radius: 30px;
+  width: 60%;
+  max-width: 320px;
+  height: calc(100vh - 70px);
+
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  transition: 0.4s ease;
+  gap: 25px;
+
+  transition: right 0.4s ease;
+  z-index: 1100;
 }
 
+/* LINKS */
 .mobile-menu a {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-decoration: none;
+  font-weight: 500;
   transition: 0.3s;
+  position: relative;
+}
+
+/* HOVER EFFECT */
+.mobile-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #00f0ff;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.mobile-menu a:hover::after {
+  width: 100%;
 }
 
 .mobile-menu a:hover {
   color: #00f0ff;
 }
 
-/* Active Menu */
+/* ACTIVE MENU */
 .mobile-menu.active {
   right: 0;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
+/* ===== TABLET (768px - 1024px) ===== */
+@media (max-width: 1024px) {
   .nav-links {
     display: none;
   }
 
   .menu-btn {
     display: block;
+  }
+
+  .mobile-menu {
+    width: 45%;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .mobile-menu {
+    width: 70%;
+    gap: 20px;
+  }
+
+  .mobile-menu a {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .mobile-menu {
+    width: 80%;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .mobile-menu a {
+    font-size: 1.1rem;
+  }
+
+  .menu-btn {
+    font-size: 1.6rem;
   }
 }

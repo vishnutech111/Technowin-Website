@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./AddImage.css";
+import "./Addimage.css";
 
-const AddImage = () => {
+const Addimage = () => {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState(null);
@@ -112,4 +112,4 @@ const AddImage = () => {
   );
 };
 
-export default AddImage;
+export default Addimage;

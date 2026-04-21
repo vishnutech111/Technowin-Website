@@ -36,10 +36,10 @@ const AdminDashboard = () => {
 
         <ul>
           <li><a href="/admin/dashboard">Dashboard</a></li>
-          <li><a href="/admin/add-blog">Add Blog</a></li>
-          <li><a href="/admin/blog-list">Blog List</a></li>
+          <li><a href="/admin/add-blogs">Add Blog</a></li>
+          <li><a href="/admin/admin-blog">Blog List</a></li>
           <li><a href="/admin/add-image">Add Image</a></li>
-          <li><a href="/admin/image-list">Image List</a></li>
+          <li><a href="/admin/admin-image">Image List</a></li>
         </ul>
       </div>
 

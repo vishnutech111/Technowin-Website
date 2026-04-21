@@ -15,6 +15,12 @@ import Contact from "./pages/contact";
 import AboutLearnMore from "./pages/AboutLearnMore";
 import AdminLogin from "./admin/AdminLogin";
 import AdminDashboard from "./admin/AdminDashboard";
+
+
+import Imagelist from "./admin/Imagelist";
+import Bloglist from "./admin/Bloglist";
+import Addimage from "./admin/Addimage";
+import Addblog from "./admin/Addblog";
 // import Contact from "./pages/Contact";
 
 // Admin Pages (optional)
@@ -40,12 +46,14 @@ function App() {
         <Route path="/about-more" element={<AboutLearnMore />} />
 
         {/* Admin */}
-
+         <Route path="/admin/add-blogs" element={<Addblog />}/>
         <Route path="/admin/login" element={<AdminLogin />} />
        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        {/* <Route path="/admin" element={<Dashboard />} />
-        <Route path="/admin/add-blog" element={<AddBlog />} />
-        <Route path="/admin/add-gallery" element={<AddGallery />} /> */}
+         {/* <Route path="/admin" element={<Dashboard />} /> */}
+        <Route path="/admin/admin-blog" element={<Bloglist />} />
+        <Route path="/admin/admin-image" element={<Imagelist />} />
+        <Route path="/admin/add-image" element={<Addimage />} />
+        
       </Routes>
     <Footer />
 </BrowserRouter>

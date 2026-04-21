@@ -3,6 +3,7 @@
   display: flex;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
+  padding-top: 100px;
 }
 
 /* SIDEBAR */

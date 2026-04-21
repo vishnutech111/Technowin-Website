@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./AddBlog.css";
 
-const AddBlog = () => {
+import "./Addblog.css";
+
+const Addblog = ({ isOpen, onClose, onCreated }) => {
   const [form, setForm] = useState({
     title: "",
     content: "",
@@ -15,6 +16,8 @@ const AddBlog = () => {
   const cloudName = "djuihd2af";
   const uploadPreset = "rjatlas";
 
+  if (!isOpen) return null; // 🔥 hide modal
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -25,7 +28,6 @@ const AddBlog = () => {
     setPreview(URL.createObjectURL(file));
   };
 
-  // 🔥 Upload to Cloudinary
   const uploadImage = async () => {
     if (!image) return "";
 
@@ -33,17 +35,12 @@ const AddBlog = () => {
     data.append("file", image);
     data.append("upload_preset", uploadPreset);
 
-    try {
-      const res = await axios.post(
-        `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
-        data
-      );
+    const res = await axios.post(
+      `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+      data
+    );
 
-      return res.data.secure_url; // ✅ important
-    } catch (err) {
-      console.error("Cloudinary error:", err);
-      return "";
-    }
+    return res.data.secure_url;
   };
 
   const handleSubmit = async (e) => {
@@ -51,71 +48,68 @@ const AddBlog = () => {
     setLoading(true);
 
     try {
-      // 1️⃣ Upload Image
       const imageUrl = await uploadImage();
 
-      // 2️⃣ Send to backend
       await axios.post("http://localhost:5000/api/blogs", {
         title: form.title,
         content: form.content,
         image: imageUrl,
       });
 
-      alert("Blog Added Successfully ✅");
+      alert("Blog Added ✅");
 
-      setForm({ title: "", content: "" });
-      setImage(null);
-      setPreview("");
+      onCreated(); // 🔥 refresh list
+      onClose();   // 🔥 close modal
+
     } catch (error) {
-      console.error(error);
-      alert("Error adding blog ❌");
+      alert("Error ❌");
     }
 
     setLoading(false);
   };
 
   return (
-    <div className="addblog-page">
-      <div className="addblog-container">
-        <h2>Add New Blog</h2>
+    <div className="modal-overlay">
+      <div className="modal-box">
+
+        <h2>Add Blog</h2>
 
         <form onSubmit={handleSubmit}>
-          {/* Title */}
           <input
             type="text"
             name="title"
-            placeholder="Enter blog title"
+            placeholder="Title"
             value={form.title}
             onChange={handleChange}
             required
           />
 
-          {/* Content */}
           <textarea
             name="content"
-            placeholder="Enter blog content"
+            placeholder="Content"
             value={form.content}
             onChange={handleChange}
-            rows="6"
             required
-          ></textarea>
+          />
 
-          {/* Image Upload */}
-          <input type="file" onChange={handleImage} accept="image/*" />
+          <input type="file" onChange={handleImage} />
 
-          {/* Preview */}
-          {preview && (
-            <img src={preview} alt="preview" className="preview-img" />
-          )}
+          {preview && <img src={preview} className="preview-img" alt="" />}
 
-          {/* Button */}
-          <button type="submit">
-            {loading ? "Uploading..." : "Add Blog"}
-          </button>
+          <div className="modal-actions">
+            <button type="submit">
+              {loading ? "Uploading..." : "Add"}
+            </button>
+
+            <button type="button" onClick={onClose}>
+              Cancel
+            </button>
+          </div>
         </form>
+
       </div>
     </div>
   );
 };
 
-export default AddBlog;
+export default Addblog;
