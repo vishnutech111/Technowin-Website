@@ -13,9 +13,9 @@
 
 /* Scroll Effect */
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.7);
+  background:rgb(135, 135, 135);
   backdrop-filter: blur(10px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(252, 251, 251, 0.3);
 }
 
 /* Container */
@@ -60,7 +60,7 @@
   bottom: -5px;
   width: 0%;
   height: 2px;
-  background: #00f0ff;
+  background: #f8f7f7;
   transition: 0.3s;
 }
 
@@ -70,7 +70,7 @@
 
 /* Hover Glow */
 .nav-links li a:hover {
-  color: #00f0ff;
+  color: #414141;
 }
 
 /* ===== Responsive ===== */
@@ -136,7 +136,7 @@
   position: absolute;
   width: 0%;
   height: 2px;
-  background: #00f0ff;
+  background: #f8f9f9;
   left: 0;
   bottom: -5px;
   transition: 0.3s;
@@ -147,7 +147,7 @@
 }
 
 .mobile-menu a:hover {
-  color: #00f0ff;
+  color: #2d2d2d;
 }
 
 /* ACTIVE MENU */
