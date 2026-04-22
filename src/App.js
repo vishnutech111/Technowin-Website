@@ -19,7 +19,7 @@ import AdminDashboard from "./admin/AdminDashboard";
 
 import Imagelist from "./admin/Imagelist";
 import Bloglist from "./admin/Bloglist";
-import Addimage from "./admin/Addimage";
+// import Addimage from "./admin/Addimage";
 import Addblog from "./admin/Addblog";
 // import Contact from "./pages/Contact";
 
@@ -52,7 +52,7 @@ function App() {
          {/* <Route path="/admin" element={<Dashboard />} /> */}
         <Route path="/admin/admin-blog" element={<Bloglist />} />
         <Route path="/admin/admin-image" element={<Imagelist />} />
-        <Route path="/admin/add-image" element={<Addimage />} />
+        {/* <Route path="/admin/add-image" element={<Addimage />} /> */}
         
       </Routes>
     <Footer />
