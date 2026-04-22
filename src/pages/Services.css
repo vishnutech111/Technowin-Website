@@ -43,10 +43,10 @@
   display: flex;
   gap: 40px;
   align-items: center;
-  background: linear-gradient(120deg, #111827, #1f2937);
+  background: linear-gradient(120deg, #ececed, #d0d0d1);
   border-top-right-radius: 100px;
   border-bottom-left-radius: 100px;
-  color: #fff;
+  color: #070707;
 }
 
 
@@ -57,9 +57,9 @@
   display: flex;
   gap: 40px;
   align-items: center;
-  background: linear-gradient(120deg, #111827, #1f2937);
+  background: linear-gradient(120deg, #ececed, #d0d0d1);
   border-top-left-radius: 100px;
-  color: #fff;
+  color: #0c0c0c;
 }
 
 /* Reverse */
@@ -85,7 +85,7 @@
 }
 
 .service-text h2 {
-  color: #00bcd4;
+  color: #070707;
   margin-bottom: 10px;
 }
 

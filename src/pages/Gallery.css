@@ -1,7 +1,7 @@
 .gallery-page {
   font-family: "Poppins", sans-serif;
-  background: #0f172a;
-  color: #fff;
+  background: #f5f6f7;
+  color: #1f1e1e;
 }
 
 /* ===== Hero ===== */
@@ -13,7 +13,7 @@
 }
 
 .gallery-overlay {
-  background: rgba(0,0,0,0.7);
+  background: rgba(48, 47, 47, 0.7);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@
 
 .gallery-overlay h1 {
   font-size: 3rem;
-  text-shadow: 0 0 20px #00f0ff;
+  text-shadow: 0 0 20px #f5f6f7;
 }
 
 /* ===== Section ===== */
@@ -35,7 +35,7 @@
 
 .gallery-section h2 {
   margin-bottom: 40px;
-  color: #00f0ff;
+  color: #212121;
 }
 
 /* ===== Grid ===== */
@@ -61,7 +61,7 @@
   inset: 0;
   border-radius: 15px;
   padding: 2px;
-  background: linear-gradient(120deg, #00f0ff, #0077ff, #00f0ff);
+  background: linear-gradient(120deg, #f3f5f5, #dededf, #c9caca);
   -webkit-mask: linear-gradient(#fff 0 0) content-box,
                 linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;

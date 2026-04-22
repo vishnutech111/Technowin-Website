@@ -1,6 +1,6 @@
 .footer {
-  background: #0f172a;
-  color: #fff;
+  background:rgb(232, 231, 231);
+  color: #3e3d3d;
   padding-top: 50px;
   font-family: "Poppins", sans-serif;
 }
@@ -21,13 +21,13 @@
 }
 
 .footer-section h2.logo {
-  color: #00f0ff;
+  color: #0f1010;
   margin-bottom: 10px;
 }
 
 .footer-section h3 {
   margin-bottom: 15px;
-  color: #00f0ff;
+  color: #111212;
 }
 
 /* Links */
@@ -40,20 +40,20 @@
 }
 
 .footer-section ul li a {
-  color: #cbd5f5;
+  color: #111112;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .footer-section ul li a:hover {
-  color: #00f0ff;
+  color: #111212;
   padding-left: 5px;
 }
 
 /* Contact */
 .footer-section p {
   margin-bottom: 8px;
-  color: #cbd5f5;
+  color: #161717;
 }
 
 /* Social Icons */
@@ -69,7 +69,7 @@
 }
 
 .socials span:hover {
-  color: #00f0ff;
+  color: #202020;
   transform: scale(1.2);
 }
 

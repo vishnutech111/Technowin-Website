@@ -66,7 +66,7 @@
 
 .about-more-content h2 {
   margin-bottom: 15px;
-  color: #00bcd4;
+  color: #111111;
 }
 
 .about-more-content p {
@@ -79,8 +79,8 @@
 .about-footer-text {
   text-align: center;
   padding: 50px 20px;
-  background: #0f172a;
-  color: #fff;
+  background: #e4e4e5;
+  color: #666565;
 }
 
 /* ===== Responsive ===== */
